@@ -1,0 +1,48 @@
+{
+  // Visit https://aka.ms/tsconfig to read more about this file
+  "compilerOptions": {
+    // File Layout
+    "rootDir": "src", //Indica a TypeScript de dónde leer los archivos fuente (.ts).
+    "outDir": "dist", //Carpeta donde TS pondrá los archivos compilados (.js).
+
+    // Environment Settings
+    // See also https://aka.ms/tsconfig/module
+    "module": "commonjs", //Define el sistema de módulos del código JS compilado.
+                          //"commonjs" = estándar de Node.js (require/export)
+    "target": "ES2019", //Define a qué versión de JavaScript se compila.
+    "types": [], //Vacío = TypeScript no cargará tipos globales por defecto. Esto evita conflictos entre librerías.
+    "moduleResolution": "node", //Indica cómo TypeScript resuelve imports (node_modules, rutas relativas).
+    // For nodejs:
+    // "lib": ["esnext"],
+    // "types": ["node"],
+    // and npm install -D @types/node
+
+    // Other Outputs
+    "sourceMap": true, //Permite depurar el código TS desde el navegador/VSCode viendo la línea original.
+    "declaration": true, //Genera archivos .d.ts con los tipos.
+    "declarationMap": true, //Mapa de tipos → para depurar .d.ts.
+
+    // Stricter Typechecking Options
+    "noUncheckedIndexedAccess": true, //Fuerza a TypeScript a considerar que array[index] puede ser undefined.
+    "exactOptionalPropertyTypes": true, //Hace que prop?: T sea solo undefined, no null.
+
+    // Style Options
+    // "noImplicitReturns": true,
+    // "noImplicitOverride": true,
+    // "noUnusedLocals": true,
+    // "noUnusedParameters": true,
+    // "noFallthroughCasesInSwitch": true,
+    // "noPropertyAccessFromIndexSignature": true,
+
+    // Recommended Options
+    "strict": true, //Activa todos los modos estrictos de TypeScript.
+    "jsx": "react-jsx",
+    "verbatimModuleSyntax": false, //Evita errores ECMAScript imports cannot be written in a CommonJS file
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true, //Evita problemas en Windows vs Linux por mayúsculas/minúsculas en rutas.
+    "isolatedModules": true, //Hace que cada archivo se compile por separado.
+    "noUncheckedSideEffectImports": true, //Evita importar módulos solo “por efectos secundarios”.
+    "moduleDetection": "force", //Fuerza a TS a detectar qué archivos usan módulos.
+    "skipLibCheck": true //No verifica los tipos internos de librerías externas.
+  }
+}
