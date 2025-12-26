@@ -1,6 +1,7 @@
 import express from "express";
 import cors from "cors";
 import { query } from "./config/db";
+import { authRouter } from "./modules/auth/auth.routes";
 
 const app = express();
 
@@ -28,5 +29,8 @@ app.get("/test-db", async (_, res) => {
         });
     }
 });
+
+// 🔐 Rutas de autenticación
+app.use("/api/auth", authRouter);
 
 export { app };
