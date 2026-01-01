@@ -3,6 +3,7 @@ import cors from "cors";
 import { query } from "./config/db";
 import { authRouter } from "./modules/auth/auth.routes";
 import { userRouter } from "./modules/users/user.routes";
+import { productRouter } from "./modules/products/product.routes";
 
 const app = express();
 
@@ -34,5 +35,6 @@ app.get("/test-db", async (_, res) => {
 // 🔐 Rutas de autenticación
 app.use("/api/auth", authRouter);
 app.use("/api/users", userRouter);
+app.use("/api/products", productRouter);
 
 export { app };
